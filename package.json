@@ -1,0 +1,22 @@
+{
+  "name": "shibil-portfolio-server",
+  "version": "1.0.0",
+  "description": "Muhammed Shibil A - Flutter Developer Portfolio Web Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "flutter",
+    "developer",
+    "portfolio",
+    "nodejs",
+    "server"
+  ],
+  "author": "Muhammed Shibil A",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

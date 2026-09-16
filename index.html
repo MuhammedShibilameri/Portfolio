@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammed Shibil A | Flutter Developer & Mobile Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Muhammed Shibil A - Flutter Developer specializing in Dart, Firebase, state management (Provider/Cubit), and offline-first mobile applications.">
+  <meta name="keywords" content="Muhammed Shibil, Flutter Developer, Dart, Firebase, Mobile App Developer, Portfolio, Android, iOS">
+  <meta name="author" content="Muhammed Shibil A">
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        <span><span class="text-gradient-flutter">Shibil</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- Resume Quick Action -->
+        <button class="btn btn-primary btn-sm" id="btn-open-resume-nav">
+          <i class="fa-solid fa-file-invoice"></i>
+          <span>Resume</span>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Available for Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient-flutter">Muhammed Shibil</span>
+          </h1>
+
+          <div class="hero-role">
+            <i class="fa-brands fa-flutter" style="color: #38bdf8;"></i>
+            <span>Flutter & Dart Developer</span>
+          </div>
+
+          <p class="hero-description">
+            Mobile Application Engineer dedicated to building high-performance, pixel-perfect, cross-platform apps for Android & iOS using <strong>Flutter</strong>, <strong>Dart</strong>, and <strong>Firebase</strong>. Specialized in reactive state management, offline-first architectures (Hive), and seamless REST APIs.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-code"></i>
+              <span>View Projects</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Contact Me</span>
+            </a>
+            <button class="btn btn-outline" id="btn-hero-resume">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span>Resume</span>
+            </button>
+          </div>
+
+          <!-- Social Links -->
+          <div class="hero-socials">
+            <a href="https://github.com/MuhammedShibilameri" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/shibil-a-601a1a384" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:mhdshibil9562@gmail.com" class="social-icon-btn" title="Send Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:+919562849142" class="social-icon-btn" title="Call Me">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Phone App Mockup Visual -->
+        <div class="hero-visual">
+          <!-- Floating Badges -->
+          <div class="floating-badge badge-flutter">
+            <i class="fa-brands fa-flutter" style="color: #02569B; font-size: 1.3rem;"></i>
+            <div>
+              <strong style="font-size: 0.85rem; display:block;">Flutter 3.x</strong>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">60 FPS Smooth UI</span>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-firebase">
+            <i class="fa-solid fa-fire" style="color: #f59e0b; font-size: 1.3rem;"></i>
+            <div>
+              <strong style="font-size: 0.85rem; display:block;">Firebase</strong>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">Auth & Real-time</span>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-dart">
+            <i class="fa-solid fa-code" style="color: #38bdf8; font-size: 1.2rem;"></i>
+            <div>
+              <strong style="font-size: 0.85rem; display:block;">Dart & Provider</strong>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">Clean Architecture</span>
+            </div>
+          </div>
+
+          <!-- Smartphone Shell Mockup -->
+          <div class="phone-mockup-wrapper">
+            <div class="phone-notch">
+              <div class="phone-cam"></div>
+              <div class="phone-speaker"></div>
+            </div>
+            <div class="phone-screen">
+              <div class="screen-app-bar">
+                <span><i class="fa-solid fa-bars"></i> DripStore</span>
+                <span><i class="fa-solid fa-bag-shopping"></i></span>
+              </div>
+              <div class="screen-banner">
+                <h4>Summer Collection</h4>
+                <p>Trending Fashion App in Flutter</p>
+              </div>
+              <div class="screen-chips">
+                <span class="screen-chip active">All Items</span>
+                <span class="screen-chip">Hoodies</span>
+                <span class="screen-chip">Sneakers</span>
+                <span class="screen-chip">Jackets</span>
+              </div>
+              <div class="screen-list">
+                <div class="screen-item">
+                  <div class="screen-item-icon"><i class="fa-solid fa-shirt"></i></div>
+                  <div class="screen-item-info">
+                    <h5>Oversized Street Hoodie</h5>
+                    <span>Flutter + Provider State</span>
+                  </div>
+                </div>
+                <div class="screen-item">
+                  <div class="screen-item-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                  <div class="screen-item-info">
+                    <h5>Blood Donation App</h5>
+                    <span>Firebase Firestore Live</span>
+                  </div>
+                </div>
+                <div class="screen-item">
+                  <div class="screen-item-icon"><i class="fa-solid fa-wallet"></i></div>
+                  <div class="screen-item-info">
+                    <h5>Expense Tracker</h5>
+                    <span>Hive NoSQL Offline</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Featured Projects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">60fps</span>
+          <span class="stat-label">Smooth UI Performance</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Responsive Layouts</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">Offline</span>
+          <span class="stat-label">First Hive Database</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Passionate Mobile Application Developer</h2>
+        <p class="section-subtitle">
+          Transforming product ideas and Figma designs into scalable, resilient, and user-centric mobile applications.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a <strong>Flutter Developer</strong> based in <strong>Kannur, India</strong>, with hands-on experience architecting cross-platform mobile solutions. My expertise focuses on building production-ready apps using <strong>Dart</strong>, <strong>Flutter SDK</strong>, and <strong>Firebase</strong>.
+          </p>
+          <p>
+            I specialize in developing responsive e-commerce storefronts, real-time community platforms, and offline-first finance utilities. Whether it's managing complex reactive state with <strong>Provider / Cubit</strong>, binding asynchronous <strong>RESTful APIs</strong>, or persisting records locally with <strong>Hive NoSQL</strong>, I take pride in crafting fluid 60fps applications.
+          </p>
+          <p>
+            My background includes a <strong>B.Com in Computer Applications</strong> from <strong>Kannur University</strong> and extensive industry experience developing robust apps at <strong>Codeme Hub International Pvt Ltd</strong>.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-layer-group"></i></div>
+              <h4 class="highlight-title">State Management</h4>
+              <p class="highlight-desc">Clean separation of business logic using Provider and Cubit.</p>
+            </div>
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-database"></i></div>
+              <h4 class="highlight-title">Offline First</h4>
+              <p class="highlight-desc">High-speed local NoSQL caching with Hive and SharedPreferences.</p>
+            </div>
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-cloud"></i></div>
+              <h4 class="highlight-title">Firebase & Cloud</h4>
+              <p class="highlight-desc">Authentication, Cloud Firestore real-time listeners, and Storage.</p>
+            </div>
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+              <h4 class="highlight-title">Adaptive UI/UX</h4>
+              <p class="highlight-desc">Pixel-perfect conversion of Figma mockups across phone & tablet.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Card -->
+        <div class="about-experience-card">
+          <span class="section-tag" style="margin-bottom: 0.8rem;">Current Experience</span>
+          <h3 class="experience-role">Flutter Developer</h3>
+          <div class="experience-company">Codeme Hub International Pvt Ltd</div>
+          <div class="experience-meta">
+            <span><i class="fa-solid fa-calendar-days"></i> 08/2025 – Present</span>
+            <span><i class="fa-solid fa-location-dot"></i> Calicut, India</span>
+          </div>
+          <ul class="experience-bullets">
+            <li>Engineered cross-platform mobile applications using Dart and Flutter, delivering smooth 60fps performance and responsive layouts across varied screen densities.</li>
+            <li>Implemented modular state management using Provider and Cubit to isolate UI presentation from asynchronous business logic.</li>
+            <li>Integrated RESTful APIs with error-handling mechanisms and validated API endpoints across GET, POST, PUT, DELETE via Postman.</li>
+            <li>Configured local offline caching using Hive NoSQL to decrease network latency and empower offline capabilities.</li>
+            <li>Collaborated in Agile sprints, conducting Git code reviews and translating complex Figma design components into reusable widgets.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS SECTION ==================== -->
+  <section class="section" id="skills" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tech Stack & Skills</span>
+        <h2 class="section-title">Technical Expertise</h2>
+        <p class="section-subtitle">
+          Core competencies, languages, cloud tools, and development frameworks I leverage daily.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- 1. Mobile Development -->
+        <div class="skill-category-card">
+          <div class="card-header-with-icon">
+            <div class="card-icon"><i class="fa-brands fa-flutter"></i></div>
+            <div>
+              <h3 class="card-title">Mobile Development</h3>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Cross-Platform Framework</span>
+            </div>
+          </div>
+          <div class="skills-tags-wrap">
+            <span class="skill-tag featured"><i class="fa-brands fa-flutter"></i> Flutter SDK</span>
+            <span class="skill-tag featured">Cross-Platform Mobile Dev</span>
+            <span class="skill-tag">Responsive UI</span>
+            <span class="skill-tag">Adaptive UI</span>
+            <span class="skill-tag">Material Design 3</span>
+            <span class="skill-tag">Cupertino (iOS)</span>
+            <span class="skill-tag">Custom Widgets</span>
+            <span class="skill-tag">60 FPS Smooth UI</span>
+          </div>
+        </div>
+
+        <!-- 2. Programming Languages -->
+        <div class="skill-category-card">
+          <div class="card-header-with-icon">
+            <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+            <div>
+              <h3 class="card-title">Languages & Foundations</h3>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Core Languages</span>
+            </div>
+          </div>
+          <div class="skills-tags-wrap">
+            <span class="skill-tag featured"><i class="fa-solid fa-code"></i> Dart</span>
+            <span class="skill-tag featured">Dart OOP</span>
+            <span class="skill-tag">Asynchronous Futures & Streams</span>
+            <span class="skill-tag">HTML5 & CSS3</span>
+            <span class="skill-tag">JavaScript Fundamentals</span>
+          </div>
+        </div>
+
+        <!-- 3. State Management -->
+        <div class="skill-category-card">
+          <div class="card-header-with-icon">
+            <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div>
+              <h3 class="card-title">State Management</h3>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Reactive Logic & Flow</span>
+            </div>
+          </div>
+          <div class="skills-tags-wrap">
+            <span class="skill-tag featured"><i class="fa-solid fa-cubes"></i> BLoC</span>
+            <span class="skill-tag featured"><i class="fa-solid fa-cube"></i> Cubit</span>
+            <span class="skill-tag featured"><i class="fa-solid fa-diagram-project"></i> Provider</span>
+            <span class="skill-tag">State Notification</span>
+            <span class="skill-tag">Reactive UI Updates</span>
+          </div>
+        </div>
+
+        <!-- 4. Architecture -->
+        <div class="skill-category-card">
+          <div class="card-header-with-icon">
+            <div class="card-icon"><i class="fa-solid fa-sitemap"></i></div>
+            <div>
+              <h3 class="card-title">Software Architecture</h3>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Scalable Code Structure</span>
+            </div>
+          </div>
+          <div class="skills-tags-wrap">
+            <span class="skill-tag featured">Clean Architecture</span>
+            <span class="skill-tag featured">Modular Architecture</span>
+            <span class="skill-tag">Reusable Components</span>
+            <span class="skill-tag">Separation of Concerns</span>
+            <span class="skill-tag">Repository Pattern</span>
+            <span class="skill-tag">MVVM & MVC Patterns</span>
+          </div>
+        </div>
+
+        <!-- 5. Backend & Cloud Services -->
+        <div class="skill-category-card">
+          <div class="card-header-with-icon">
+            <div class="card-icon firebase-icon"><i class="fa-solid fa-fire"></i></div>
+            <div>
+              <h3 class="card-title">Backend & Cloud Services</h3>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Cloud Services & APIs</span>
+            </div>
+          </div>
+          <div class="skills-tags-wrap">
+            <span class="skill-tag featured"><i class="fa-solid fa-fire"></i> Firebase Authentication</span>
+            <span class="skill-tag featured"><i class="fa-solid fa-database"></i> Cloud Firestore</span>
+            <span class="skill-tag">Firebase Storage</span>
+            <span class="skill-tag featured"><i class="fa-solid fa-network-wired"></i> RESTful APIs</span>
+            <span class="skill-tag">JSON Parsing & Serialization</span>
+            <span class="skill-tag">Third-Party API Integration</span>
+            <span class="skill-tag">Real-Time Snapshots</span>
+          </div>
+        </div>
+
+        <!-- 6. Databases & Local Storage -->
+        <div class="skill-category-card">
+          <div class="card-header-with-icon">
+            <div class="card-icon"><i class="fa-solid fa-database"></i></div>
+            <div>
+              <h3 class="card-title">Databases & Local Storage</h3>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Offline Data & Caching</span>
+            </div>
+          </div>
+          <div class="skills-tags-wrap">
+            <span class="skill-tag featured"><i class="fa-solid fa-database"></i> Hive NoSQL</span>
+            <span class="skill-tag featured">Shared Preferences</span>
+            <span class="skill-tag featured">Offline-First Data Persistence</span>
+            <span class="skill-tag">Local Caching</span>
+            <span class="skill-tag">Fast Read/Write Operations</span>
+          </div>
+        </div>
+
+        <!-- 7. Development Practices -->
+        <div class="skill-category-card">
+          <div class="card-header-with-icon">
+            <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h3 class="card-title">Development Practices</h3>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Engineering Standards</span>
+            </div>
+          </div>
+          <div class="skills-tags-wrap">
+            <span class="skill-tag featured">Clean Code</span>
+            <span class="skill-tag">Debugging & Troubleshooting</span>
+            <span class="skill-tag">Performance Optimization</span>
+            <span class="skill-tag">Mobile Application Lifecycle</span>
+            <span class="skill-tag">Agile Development</span>
+            <span class="skill-tag">Sprint Code Reviews</span>
+          </div>
+        </div>
+
+        <!-- 8. Version Control & Tools -->
+        <div class="skill-category-card">
+          <div class="card-header-with-icon">
+            <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <div>
+              <h3 class="card-title">Version Control & Tools</h3>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Developer Toolkit</span>
+            </div>
+          </div>
+          <div class="skills-tags-wrap">
+            <span class="skill-tag featured"><i class="fa-brands fa-git-alt"></i> Git</span>
+            <span class="skill-tag featured"><i class="fa-brands fa-github"></i> GitHub</span>
+            <span class="skill-tag featured"><i class="fa-solid fa-vial"></i> Postman</span>
+            <span class="skill-tag"><i class="fa-brands fa-android"></i> Android Studio</span>
+            <span class="skill-tag"><i class="fa-solid fa-code"></i> VS Code</span>
+            <span class="skill-tag"><i class="fa-brands fa-figma"></i> Figma to Flutter</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS SECTION ==================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Featured Work</span>
+        <h2 class="section-title">My Mobile Projects</h2>
+        <p class="section-subtitle">
+          Explore real-world mobile applications built with Flutter, Dart, Firebase, and modern state architectures.
+        </p>
+      </div>
+
+      <!-- Category Filter Bar -->
+      <div class="projects-filter-bar">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+        <button class="filter-btn" data-filter="firebase">Firebase & Real-Time</button>
+        <button class="filter-btn" data-filter="utility">Finance & Utilities</button>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- PROJECT 1: DripStore -->
+        <div class="project-card" data-category="ecommerce">
+          <div class="project-banner">
+            <div class="project-banner-decor" style="background: linear-gradient(135deg, #1e3a8a, #0284c7);"></div>
+            <i class="fa-solid fa-shirt project-banner-icon"></i>
+            <span class="project-badge-pill">E-Commerce Fashion</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">DripStore – Clothing App</h3>
+            <p class="project-desc">
+              A modern fashion and apparel e-commerce mobile application featuring dynamic product catalog discovery, multi-variant filtering (size, color, brand), interactive shopping cart, wishlist, and simulated checkout flow.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">Provider</span>
+              <span class="tech-tag">REST API</span>
+              <span class="tech-tag">Reactive Cart</span>
+            </div>
+            <div class="project-footer-actions">
+              <a href="https://github.com/MuhammedShibilameri/dripstore-clothes-" target="_blank" rel="noopener noreferrer" class="project-link-btn primary">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub Repo</span>
+              </a>
+              <button class="project-link-btn btn-view-details" data-project="dripstore">
+                <span>Details & Features</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: Real-Time Blood Donation -->
+        <div class="project-card" data-category="firebase">
+          <div class="project-banner">
+            <div class="project-banner-decor" style="background: linear-gradient(135deg, #991b1b, #ef4444);"></div>
+            <i class="fa-solid fa-heart-pulse project-banner-icon"></i>
+            <span class="project-badge-pill">Healthcare & Community</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Blood Donation App</h3>
+            <p class="project-desc">
+              A community healthcare mobile platform connecting blood donors with recipients across regional networks. Built with real-time Firebase Firestore listeners to broadcast urgent blood requests and update donor availability instantly.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">Firebase Auth</span>
+              <span class="tech-tag">Cloud Firestore</span>
+              <span class="tech-tag">Firebase Storage</span>
+            </div>
+            <div class="project-footer-actions">
+              <a href="https://github.com/MuhammedShibilameri" target="_blank" rel="noopener noreferrer" class="project-link-btn primary">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub Profile</span>
+              </a>
+              <button class="project-link-btn btn-view-details" data-project="blooddonation">
+                <span>Details & Features</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: Personal Expense Tracker -->
+        <div class="project-card" data-category="utility">
+          <div class="project-banner">
+            <div class="project-banner-decor" style="background: linear-gradient(135deg, #065f46, #10b981);"></div>
+            <i class="fa-solid fa-chart-pie project-banner-icon"></i>
+            <span class="project-badge-pill">Finance Utility</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Personal Expense Tracker</h3>
+            <p class="project-desc">
+              An offline-first personal finance management application allowing users to log, categorize, edit, and inspect daily transactions with zero network latency. Features interactive visual spending charts and monthly summaries.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">Hive Database</span>
+              <span class="tech-tag">Provider</span>
+              <span class="tech-tag">Offline-First</span>
+            </div>
+            <div class="project-footer-actions">
+              <a href="https://github.com/MuhammedShibilameri/expense-tracker-" target="_blank" rel="noopener noreferrer" class="project-link-btn primary">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub Repo</span>
+              </a>
+              <button class="project-link-btn btn-view-details" data-project="expensetracker">
+                <span>Details & Features</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: Nykaa E-Commerce Clone -->
+        <div class="project-card" data-category="ecommerce">
+          <div class="project-banner">
+            <div class="project-banner-decor" style="background: linear-gradient(135deg, #831843, #ec4899);"></div>
+            <i class="fa-solid fa-gem project-banner-icon"></i>
+            <span class="project-badge-pill">UI/UX Replication</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Nykaa E-Commerce Clone</h3>
+            <p class="project-desc">
+              Pixel-perfect e-commerce shopping interface inspired by Nykaa's beauty and lifestyle platform. Engineered with reusable Flutter widgets, responsive multi-breakpoint layouts, dynamic hero banners, and brand showcase grids.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">Responsive UI</span>
+              <span class="tech-tag">Custom Widgets</span>
+              <span class="tech-tag">Figma to Code</span>
+            </div>
+            <div class="project-footer-actions">
+              <a href="https://github.com/MuhammedShibilameri/nykaa" target="_blank" rel="noopener noreferrer" class="project-link-btn primary">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub Repo</span>
+              </a>
+              <button class="project-link-btn btn-view-details" data-project="nykaa">
+                <span>Details & Features</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: Kervia Mobile Application -->
+        <div class="project-card" data-category="utility">
+          <div class="project-banner">
+            <div class="project-banner-decor" style="background: linear-gradient(135deg, #312e81, #6366f1);"></div>
+            <i class="fa-solid fa-mobile-screen project-banner-icon"></i>
+            <span class="project-badge-pill">Cross-Platform App</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Kervia Mobile Solution</h3>
+            <p class="project-desc">
+              Scalable cross-platform Flutter application engineered with clean architectural guidelines, modular services, structured state flow, and smooth multi-device UI compatibility.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">Material 3</span>
+              <span class="tech-tag">Modular Code</span>
+              <span class="tech-tag">Cross-Platform</span>
+            </div>
+            <div class="project-footer-actions">
+              <a href="https://github.com/MuhammedShibilameri" target="_blank" rel="noopener noreferrer" class="project-link-btn primary">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub Profile</span>
+              </a>
+              <button class="project-link-btn btn-view-details" data-project="kervia">
+                <span>Details & Features</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE & EDUCATION ==================== -->
+  <section class="section" id="experience" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Career Journey</span>
+        <h2 class="section-title">Experience & Education</h2>
+        <p class="section-subtitle">
+          My professional track record as a developer and academic background.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Experience -->
+        <div class="skill-category-card" style="margin-bottom: 0;">
+          <div class="card-header-with-icon">
+            <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div>
+              <h3 class="card-title">Work Experience</h3>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Professional Roles</span>
+            </div>
+          </div>
+          <div style="margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem;">
+              <strong style="font-size: 1.1rem; color: var(--text-primary);">Flutter Developer</strong>
+              <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600;">08/2025 – Present</span>
+            </div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
+              Codeme Hub International Pvt Ltd • Calicut, India
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Developing cross-platform mobile apps using Flutter and Dart. Implementing robust state management with Provider and Cubit, integrating REST APIs, configuring Hive NoSQL offline databases, and translating Figma designs into responsive mobile screens.
+            </p>
+          </div>
+        </div>
+
+        <!-- Education & Certifications -->
+        <div class="skill-category-card" style="margin-bottom: 0;">
+          <div class="card-header-with-icon">
+            <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div>
+              <h3 class="card-title">Education & Certifications</h3>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Academic Qualifications</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.2rem;">
+              <strong style="font-size: 1.05rem; color: var(--text-primary);">B.Com Computer Application</strong>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Kannur, India</span>
+            </div>
+            <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Kannur University
+            </div>
+
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+              <strong style="font-size: 0.95rem; display: block; margin-bottom: 0.4rem; color: var(--text-primary);">Certificates & Training</strong>
+              <ul style="font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+                <li><i class="fa-solid fa-check" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> Flutter Development Internship Certificate – Codeme Hub</li>
+                <li><i class="fa-solid fa-check" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> Bachelor of Commerce (Computer Application) – Kannur University</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RESUME CTA BANNER ==================== -->
+  <section class="resume-banner-section">
+    <div class="container">
+      <div class="resume-cta-box">
+        <div class="resume-info">
+          <h3>Need My Detailed Resume?</h3>
+          <p>
+            Get a comprehensive breakdown of my Flutter engineering background, architecture methodologies, technical toolset, and achievements.
+          </p>
+        </div>
+        <div class="resume-actions-group">
+          <button class="btn btn-primary" id="btn-preview-resume">
+            <i class="fa-solid fa-eye"></i>
+            <span>Preview Resume</span>
+          </button>
+          <a href="Shibil_flutter_developer.pdf" target="_blank" download="Shibil_flutter_developer.pdf" class="btn btn-secondary">
+            <i class="fa-solid fa-download"></i>
+            <span>Download Resume</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's Connect & Build</h2>
+        <p class="section-subtitle">
+          Have an exciting Flutter mobile app idea, opportunity, or project? Feel free to reach out directly.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information Cards -->
+        <div class="contact-info-cards">
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-card-text">
+              <span>Email Address</span>
+              <a href="mailto:mhdshibil9562@gmail.com">mhdshibil9562@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-card-text">
+              <span>Phone / WhatsApp</span>
+              <a href="tel:+919562849142">+91 9562849142</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-card-text">
+              <span>Location</span>
+              <p>Kannur, Kerala, India</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="contact-card-text">
+              <span>LinkedIn Profile</span>
+              <a href="https://linkedin.com/in/shibil-a-601a1a384" target="_blank" rel="noopener noreferrer">linkedin.com/in/shibil-a-601a1a384</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-brands fa-github"></i></div>
+            <div class="contact-card-text">
+              <span>GitHub Profile</span>
+              <a href="https://github.com/MuhammedShibilameri" target="_blank" rel="noopener noreferrer">github.com/MuhammedShibilameri</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="e.g. John Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="Mobile App Project / Flutter Inquiry" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or inquiry..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Send Message</span>
+            </button>
+
+            <div class="form-feedback" id="form-feedback">
+              Thank you! Your message has been sent. I will respond to you shortly.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <span><span class="text-gradient-flutter">Shibil</span></span>
+      </div>
+
+      <div class="footer-copy">
+        &copy; 2026 Muhammed Shibil A. Built with Flutter Passion & Modern Web Standards.
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/MuhammedShibilameri" target="_blank" rel="noopener noreferrer" title="GitHub">
+          <i class="fa-brands fa-github" style="font-size: 1.25rem;"></i>
+        </a>
+        <a href="https://linkedin.com/in/shibil-a-601a1a384" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in" style="font-size: 1.25rem;"></i>
+        </a>
+        <a href="mailto:mhdshibil9562@gmail.com" title="Email">
+          <i class="fa-solid fa-envelope" style="font-size: 1.25rem;"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== PROJECT DETAILS MODAL ==================== -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-project-title">Project Details</h3>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-project-body">
+        <!-- Injected dynamically via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== RESUME VIEWER MODAL ==================== -->
+  <div class="modal-overlay" id="resume-modal">
+    <div class="modal-container" style="max-width: 900px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Muhammed Shibil A – Resume</h3>
+        <div style="display: flex; align-items: center; gap: 0.8rem;">
+          <a href="Shibil_flutter_developer.pdf" target="_blank" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>Open in New Tab</span>
+          </a>
+          <button class="modal-close-btn" id="resume-modal-close-btn" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body" style="padding: 1rem;">
+        <div class="resume-frame-wrapper">
+          <iframe src="Shibil_flutter_developer.pdf" title="Muhammed Shibil Resume Preview"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

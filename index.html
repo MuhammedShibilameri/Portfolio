@@ -21,6 +21,16 @@
 </head>
 <body>
 
+  <!-- Confetti Canvas for Interactive Celebrations -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Fluid Aurora Ambient Mesh Background -->
+  <div class="aurora-background">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+  </div>
+
   <!-- ==================== NAVIGATION BAR ==================== -->
   <header class="navbar" id="navbar">
     <div class="container nav-container">
@@ -67,9 +77,18 @@
     <div class="container">
       <div class="hero-content">
         <div class="hero-text-content">
-          <div class="hero-badge">
-            <span class="pulse-dot"></span>
-            <span>Available for Opportunities</span>
+          <div class="hero-profile-avatar-wrap">
+            <div class="profile-avatar-ring">
+              <img src="profile.jpg" alt="Muhammed Shibil A" onerror="this.onerror=null; this.src='https://avatars.githubusercontent.com/u/243705709?v=4';">
+              <span class="profile-status-dot" title="Available for Opportunities"></span>
+            </div>
+            <div class="avatar-badge-text">
+              <div class="hero-badge" style="margin-bottom: 0.3rem;">
+                <span class="pulse-dot"></span>
+                <span>Available for Opportunities</span>
+              </div>
+              <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600;">Flutter & Dart Engineer</span>
+            </div>
           </div>
 
           <h1 class="hero-title">
@@ -144,49 +163,113 @@
             </div>
           </div>
 
-          <!-- Smartphone Shell Mockup -->
-          <div class="phone-mockup-wrapper">
+          <!-- Smartphone Shell Mockup: Live Interactive Simulator -->
+          <div class="phone-mockup-wrapper interactive tilt-card" id="hero-simulator">
+            <div class="spotlight-overlay"></div>
             <div class="phone-notch">
               <div class="phone-cam"></div>
               <div class="phone-speaker"></div>
             </div>
-            <div class="phone-screen">
-              <div class="screen-app-bar">
-                <span><i class="fa-solid fa-bars"></i> DripStore</span>
-                <span><i class="fa-solid fa-bag-shopping"></i></span>
+
+            <div class="phone-screen" style="position: relative;">
+              <!-- Toast Notification inside Phone -->
+              <div class="sim-toast" id="sim-toast">Added to Cart! (Provider state updated)</div>
+
+              <!-- Interactive App Switcher -->
+              <div class="sim-switcher">
+                <button class="sim-switch-btn active" id="sim-tab-dripstore" title="Switch to DripStore App">
+                  <i class="fa-solid fa-shirt"></i> DripStore
+                </button>
+                <button class="sim-switch-btn" id="sim-tab-kervia" title="Switch to Kervia Job Marketplace">
+                  <i class="fa-solid fa-briefcase"></i> Kervia
+                </button>
               </div>
-              <div class="screen-banner">
-                <h4>Summer Collection</h4>
-                <p>Trending Fashion App in Flutter</p>
-              </div>
-              <div class="screen-chips">
-                <span class="screen-chip active">All Items</span>
-                <span class="screen-chip">Hoodies</span>
-                <span class="screen-chip">Sneakers</span>
-                <span class="screen-chip">Jackets</span>
-              </div>
-              <div class="screen-list">
-                <div class="screen-item">
-                  <div class="screen-item-icon"><i class="fa-solid fa-shirt"></i></div>
-                  <div class="screen-item-info">
-                    <h5>Oversized Street Hoodie</h5>
-                    <span>Flutter + Provider State</span>
+
+              <!-- VIEW 1: DripStore App -->
+              <div class="sim-app-view active" id="sim-view-dripstore">
+                <div class="screen-app-bar">
+                  <span><i class="fa-solid fa-bars"></i> DripStore</span>
+                  <span><i class="fa-solid fa-bag-shopping"></i> <span class="sim-cart-badge" id="sim-cart-count">2</span></span>
+                </div>
+
+                <div class="screen-chips" id="sim-drip-chips">
+                  <span class="screen-chip active" data-cat="all">All</span>
+                  <span class="screen-chip" data-cat="hoodie">Hoodies</span>
+                  <span class="screen-chip" data-cat="sneakers">Sneakers</span>
+                  <span class="screen-chip" data-cat="jackets">Jackets</span>
+                </div>
+
+                <div class="screen-list" id="sim-drip-items" style="max-height: 180px; overflow-y: auto;">
+                  <div class="sim-interactive-item selected" data-item="Urban Streetwear Hoodie" data-price="$79.99">
+                    <div class="screen-item-icon" style="background: rgba(56, 189, 248, 0.2);"><i class="fa-solid fa-shirt" style="color: #38bdf8;"></i></div>
+                    <div class="screen-item-info" style="flex:1;">
+                      <h5 style="font-size: 0.72rem; margin-bottom: 2px;">Urban Streetwear Hoodie</h5>
+                      <span style="font-size: 0.65rem; color: #38bdf8; font-weight: 700;">$79.99 • In Stock</span>
+                    </div>
+                  </div>
+
+                  <div class="sim-interactive-item" data-item="Flutter Retro Sneakers" data-price="$119.00">
+                    <div class="screen-item-icon" style="background: rgba(245, 158, 11, 0.2);"><i class="fa-solid fa-shoe-prints" style="color: #f59e0b;"></i></div>
+                    <div class="screen-item-info" style="flex:1;">
+                      <h5 style="font-size: 0.72rem; margin-bottom: 2px;">Flutter Retro Sneakers</h5>
+                      <span style="font-size: 0.65rem; color: #f59e0b; font-weight: 700;">$119.00 • Popular</span>
+                    </div>
+                  </div>
+
+                  <div class="sim-interactive-item" data-item="Minimalist Denim Jacket" data-price="$95.00">
+                    <div class="screen-item-icon" style="background: rgba(99, 102, 241, 0.2);"><i class="fa-solid fa-vest" style="color: #818cf8;"></i></div>
+                    <div class="screen-item-info" style="flex:1;">
+                      <h5 style="font-size: 0.72rem; margin-bottom: 2px;">Minimalist Denim Jacket</h5>
+                      <span style="font-size: 0.65rem; color: #818cf8; font-weight: 700;">$95.00 • New</span>
+                    </div>
                   </div>
                 </div>
-                <div class="screen-item">
-                  <div class="screen-item-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-                  <div class="screen-item-info">
-                    <h5>Blood Donation App</h5>
-                    <span>Firebase Firestore Live</span>
+
+                <button class="sim-btn-action" id="sim-btn-cart" style="margin-top: 4px;">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <span id="sim-cart-btn-text">Add to Cart (Provider State)</span>
+                </button>
+              </div>
+
+              <!-- VIEW 2: Kervia Job Marketplace App -->
+              <div class="sim-app-view" id="sim-view-kervia">
+                <div class="screen-app-bar">
+                  <span style="color: #818cf8;"><i class="fa-solid fa-briefcase"></i> Kervia</span>
+                  <span style="font-size: 0.58rem; color: #34d399;"><i class="fa-solid fa-circle"></i> BLoC Live</span>
+                </div>
+
+                <div class="mini-app-card" style="background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.25);">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="mini-badge badge-kervia">Featured Role</span>
+                    <span style="font-size: 0.6rem; color: #34d399; font-weight: 700;">$120k – $150k</span>
+                  </div>
+                  <strong style="font-size: 0.75rem; color: #ffffff;">Senior Flutter Architect</strong>
+                  <p style="font-size: 0.62rem; color: #94a3b8; line-height: 1.3;">Codeme Hub • Remote • Clean Architecture & BLoC</p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.04); border-radius: 6px; padding: 6px; font-size: 0.62rem;">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
+                    <span style="color: #94a3b8;">Applicants:</span>
+                    <strong style="color: #38bdf8;" id="kervia-applicant-count">14 Active Streams</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span style="color: #94a3b8;">Auth Protocol:</span>
+                    <strong style="color: #f59e0b;">Firebase OTP & Google</strong>
                   </div>
                 </div>
-                <div class="screen-item">
-                  <div class="screen-item-icon"><i class="fa-solid fa-wallet"></i></div>
-                  <div class="screen-item-info">
-                    <h5>Expense Tracker</h5>
-                    <span>Hive NoSQL Offline</span>
-                  </div>
-                </div>
+
+                <button class="sim-btn-action" id="sim-btn-apply" style="background: #4f46e5; color: #ffffff; margin-top: 4px;">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span id="sim-apply-btn-text">1-Click Apply (BLoC Event)</span>
+                </button>
+              </div>
+
+              <!-- Phone Bottom Nav Bar -->
+              <div style="display: flex; justify-content: space-around; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px; margin-top: auto; font-size: 0.75rem; color: #64748b;">
+                <span style="color: var(--accent-cyan); cursor: pointer;"><i class="fa-solid fa-house"></i></span>
+                <span style="cursor: pointer;"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <span style="cursor: pointer;"><i class="fa-solid fa-heart"></i></span>
+                <span style="cursor: pointer;"><i class="fa-solid fa-user"></i></span>
               </div>
             </div>
           </div>
@@ -228,6 +311,17 @@
 
       <div class="about-grid">
         <div class="about-text">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
+            <div class="profile-avatar-ring" style="width: 70px; height: 70px;">
+              <img src="profile.jpg" alt="Muhammed Shibil A" onerror="this.onerror=null; this.src='https://avatars.githubusercontent.com/u/243705709?v=4';">
+              <span class="profile-status-dot" style="width: 14px; height: 14px;"></span>
+            </div>
+            <div>
+              <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.15rem;">Muhammed Shibil A</h3>
+              <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600;">Flutter Developer • Mobile Engineer</span>
+            </div>
+          </div>
+
           <p>
             I am a <strong>Flutter Developer</strong> based in <strong>Kannur, India</strong>, with hands-on experience architecting cross-platform mobile solutions. My expertise focuses on building production-ready apps using <strong>Dart</strong>, <strong>Flutter SDK</strong>, and <strong>Firebase</strong>.
           </p>
@@ -268,7 +362,7 @@
           <h3 class="experience-role">Flutter Developer</h3>
           <div class="experience-company">Codeme Hub International Pvt Ltd</div>
           <div class="experience-meta">
-            <span><i class="fa-solid fa-calendar-days"></i> 08/2025 – Present</span>
+            <span><i class="fa-solid fa-calendar-days"></i> September 2025 – Present</span>
             <span><i class="fa-solid fa-location-dot"></i> Calicut, India</span>
           </div>
           <ul class="experience-bullets">
@@ -473,10 +567,28 @@
         
         <!-- PROJECT 1: DripStore -->
         <div class="project-card" data-category="ecommerce">
-          <div class="project-banner">
-            <div class="project-banner-decor" style="background: linear-gradient(135deg, #1e3a8a, #0284c7);"></div>
-            <i class="fa-solid fa-shirt project-banner-icon"></i>
+          <div class="project-banner has-mockup">
             <span class="project-badge-pill">E-Commerce Fashion</span>
+            <div class="mini-phone-frame">
+              <div class="mini-phone-island"></div>
+              <div class="mini-phone-screen">
+                <div class="screen-header-bar">
+                  <span style="color: #38bdf8;"><i class="fa-solid fa-shirt"></i> DripStore</span>
+                  <span style="color: #f59e0b;"><i class="fa-solid fa-bag-shopping"></i> 2</span>
+                </div>
+                <div class="mini-app-card">
+                  <span class="mini-badge badge-dripstore">Featured Arrival</span>
+                  <strong style="color: #ffffff; font-size: 0.72rem;">Urban Streetwear Jacket</strong>
+                  <span style="color: #38bdf8; font-weight: 700;">$89.99</span>
+                </div>
+                <div style="display: flex; gap: 4px; overflow-x: hidden;">
+                  <span style="font-size: 0.55rem; background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 10px;">Size M</span>
+                  <span style="font-size: 0.55rem; background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 10px;">Cotton</span>
+                  <span style="font-size: 0.55rem; background: rgba(56,189,248,0.2); color:#38bdf8; padding: 2px 6px; border-radius: 10px;">In Stock</span>
+                </div>
+                <div class="mini-btn"><i class="fa-solid fa-cart-plus"></i> Add to Cart (Provider)</div>
+              </div>
+            </div>
           </div>
           <div class="project-content">
             <h3 class="project-title">DripStore – Clothing App</h3>
@@ -491,10 +603,16 @@
               <span class="tech-tag">Reactive Cart</span>
             </div>
             <div class="project-footer-actions">
-              <a href="https://github.com/MuhammedShibilameri/dripstore-clothes-" target="_blank" rel="noopener noreferrer" class="project-link-btn primary">
-                <i class="fa-brands fa-github"></i>
-                <span>GitHub Repo</span>
-              </a>
+              <div style="display: flex; gap: 0.6rem; align-items: center;">
+                <a href="https://github.com/MuhammedShibilameri/dripstore-clothes-" target="_blank" rel="noopener noreferrer" class="project-link-btn primary" title="View Source Code">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="dripstore-app.apk" download="dripstore-app.apk" class="project-link-btn apk-btn" title="Download DripStore Android APK">
+                  <i class="fa-brands fa-android"></i>
+                  <span>APK</span>
+                </a>
+              </div>
               <button class="project-link-btn btn-view-details" data-project="dripstore">
                 <span>Details & Features</span>
                 <i class="fa-solid fa-arrow-right"></i>
@@ -503,11 +621,67 @@
           </div>
         </div>
 
-        <!-- PROJECT 2: Real-Time Blood Donation -->
+        <!-- PROJECT 2: Kervia Job Marketplace Application -->
+        <div class="project-card" data-category="utility">
+          <div class="project-banner has-mockup">
+            <span class="project-badge-pill">Job Marketplace App</span>
+            <div class="mini-phone-frame">
+              <div class="mini-phone-island"></div>
+              <div class="mini-phone-screen">
+                <div class="screen-header-bar">
+                  <span style="color: #818cf8;"><i class="fa-solid fa-briefcase"></i> Kervia</span>
+                  <span style="font-size: 0.58rem; color: #34d399;"><i class="fa-solid fa-circle"></i> Live Streams</span>
+                </div>
+                <div class="mini-app-card">
+                  <span class="mini-badge badge-kervia">Company Hiring</span>
+                  <strong style="color: #ffffff; font-size: 0.70rem;">Sr. Flutter Engineer</strong>
+                  <span style="color: #818cf8; font-weight: 600; font-size: 0.60rem;">Clean Arch • BLoC • Firebase</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.58rem; color: #94a3b8;">12 Applications</span>
+                  <span style="font-size: 0.58rem; color: #38bdf8; font-weight: 700;">$110k - $140k</span>
+                </div>
+                <div class="mini-btn" style="background: #4f46e5;"><i class="fa-solid fa-paper-plane"></i> 1-Click Apply</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Kervia – Job Marketplace App</h3>
+            <p class="project-desc">
+              Cross-platform job marketplace mobile app engineered with Clean Architecture (Domain, Data, Presentation) and BLoC. Features separate workflows for Job Seekers and Companies, Firebase Auth (OTP/Google), Firestore real-time messaging, and resume uploads.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">BLoC</span>
+              <span class="tech-tag">Clean Architecture</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Firestore</span>
+            </div>
+            <div class="project-footer-actions">
+              <div style="display: flex; gap: 0.6rem; align-items: center;">
+                <a href="https://github.com/MuhammedShibilameri" target="_blank" rel="noopener noreferrer" class="project-link-btn primary" title="View Source Code">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="kervia-app.apk" download="kervia-app.apk" class="project-link-btn apk-btn" title="Download Kervia Android APK">
+                  <i class="fa-brands fa-android"></i>
+                  <span>APK</span>
+                </a>
+              </div>
+              <button class="project-link-btn btn-view-details" data-project="kervia">
+                <span>Details & Features</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: Real-Time Blood Donation -->
         <div class="project-card" data-category="firebase">
           <div class="project-banner">
             <div class="project-banner-decor" style="background: linear-gradient(135deg, #991b1b, #ef4444);"></div>
-            <i class="fa-solid fa-heart-pulse project-banner-icon"></i>
+            <img src="star_icon.jpg" class="project-banner-icon" alt="Star Icon" style="width:24px;height:24px;"/>
             <span class="project-badge-pill">Healthcare & Community</span>
           </div>
           <div class="project-content">
@@ -535,7 +709,7 @@
           </div>
         </div>
 
-        <!-- PROJECT 3: Personal Expense Tracker -->
+        <!-- PROJECT 4: Personal Expense Tracker -->
         <div class="project-card" data-category="utility">
           <div class="project-banner">
             <div class="project-banner-decor" style="background: linear-gradient(135deg, #065f46, #10b981);"></div>
@@ -567,7 +741,7 @@
           </div>
         </div>
 
-        <!-- PROJECT 4: Nykaa E-Commerce Clone -->
+        <!-- PROJECT 5: Nykaa E-Commerce Clone -->
         <div class="project-card" data-category="ecommerce">
           <div class="project-banner">
             <div class="project-banner-decor" style="background: linear-gradient(135deg, #831843, #ec4899);"></div>
@@ -598,39 +772,6 @@
             </div>
           </div>
         </div>
-
-        <!-- PROJECT 5: Kervia Mobile Application -->
-        <div class="project-card" data-category="utility">
-          <div class="project-banner">
-            <div class="project-banner-decor" style="background: linear-gradient(135deg, #312e81, #6366f1);"></div>
-            <i class="fa-solid fa-mobile-screen project-banner-icon"></i>
-            <span class="project-badge-pill">Cross-Platform App</span>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Kervia Mobile Solution</h3>
-            <p class="project-desc">
-              Scalable cross-platform Flutter application engineered with clean architectural guidelines, modular services, structured state flow, and smooth multi-device UI compatibility.
-            </p>
-            <div class="project-tech-tags">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Dart</span>
-              <span class="tech-tag">Material 3</span>
-              <span class="tech-tag">Modular Code</span>
-              <span class="tech-tag">Cross-Platform</span>
-            </div>
-            <div class="project-footer-actions">
-              <a href="https://github.com/MuhammedShibilameri" target="_blank" rel="noopener noreferrer" class="project-link-btn primary">
-                <i class="fa-brands fa-github"></i>
-                <span>GitHub Profile</span>
-              </a>
-              <button class="project-link-btn btn-view-details" data-project="kervia">
-                <span>Details & Features</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -659,13 +800,13 @@
           <div style="margin-bottom: 1.5rem;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem;">
               <strong style="font-size: 1.1rem; color: var(--text-primary);">Flutter Developer</strong>
-              <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600;">08/2025 – Present</span>
+              <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600;">September 2025 – Present</span>
             </div>
             <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
               Codeme Hub International Pvt Ltd • Calicut, India
             </div>
             <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-              Developing cross-platform mobile apps using Flutter and Dart. Implementing robust state management with Provider and Cubit, integrating REST APIs, configuring Hive NoSQL offline databases, and translating Figma designs into responsive mobile screens.
+              Developing responsive cross-platform mobile applications using Flutter and Dart. Implementing robust state management using BLoC, Cubit, and Provider, integrating RESTful APIs with asynchronous JSON handling, configuring Hive NoSQL offline persistence, and translating Figma designs into responsive UI.
             </p>
           </div>
         </div>
@@ -682,8 +823,8 @@
 
           <div style="margin-bottom: 1.5rem;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.2rem;">
-              <strong style="font-size: 1.05rem; color: var(--text-primary);">B.Com Computer Application</strong>
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Kannur, India</span>
+              <strong style="font-size: 1.05rem; color: var(--text-primary);">Bachelor of Commerce (B.Com) – Computer Application</strong>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">2022 – 2025</span>
             </div>
             <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
               Kannur University
@@ -717,9 +858,13 @@
             <i class="fa-solid fa-eye"></i>
             <span>Preview Resume</span>
           </button>
-          <a href="Shibil_flutter_developer.pdf" target="_blank" download="Shibil_flutter_developer.pdf" class="btn btn-secondary">
+          <a href="resume.pdf" target="_blank" download="Muhammed_Shibil_A_Flutter_Developer.pdf" class="btn btn-secondary">
             <i class="fa-solid fa-download"></i>
             <span>Download Resume</span>
+          </a>
+          <a href="resume.html" target="_blank" class="btn btn-outline">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Web Version</span>
           </a>
         </div>
       </div>
@@ -809,6 +954,17 @@
               <span>Send Message</span>
             </button>
 
+            <div class="quick-contact-pills" style="justify-content: center; margin-top: 1rem;">
+              <a href="https://wa.me/919562849142?text=Hi%20Shibil,%20I%20saw%20your%20Flutter%20portfolio!" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm" title="Quick WhatsApp Chat">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Chat on WhatsApp</span>
+              </a>
+              <a href="mailto:mhdshibil9562@gmail.com" class="btn btn-outline btn-sm" title="Direct Email">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email Directly</span>
+              </a>
+            </div>
+
             <div class="form-feedback" id="form-feedback">
               Thank you! Your message has been sent. I will respond to you shortly.
             </div>
@@ -862,16 +1018,20 @@
       <div class="modal-header">
         <h3 class="modal-title">Muhammed Shibil A – Resume</h3>
         <div style="display: flex; align-items: center; gap: 0.8rem;">
-          <a href="Shibil_flutter_developer.pdf" target="_blank" class="btn btn-primary btn-sm">
+          <a href="resume.html" target="_blank" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>HTML Version</span>
+          </a>
+          <a href="resume.pdf" target="_blank" class="btn btn-primary btn-sm">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            <span>Open in New Tab</span>
+            <span>Open PDF</span>
           </a>
           <button class="modal-close-btn" id="resume-modal-close-btn" aria-label="Close modal">&times;</button>
         </div>
       </div>
       <div class="modal-body" style="padding: 1rem;">
         <div class="resume-frame-wrapper">
-          <iframe src="Shibil_flutter_developer.pdf" title="Muhammed Shibil Resume Preview"></iframe>
+          <iframe src="resume.pdf" title="Muhammed Shibil Resume Preview"></iframe>
         </div>
       </div>
     </div>

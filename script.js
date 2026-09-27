@@ -399,18 +399,13 @@ match /conversations/{conversationId} {
       formFeedback.innerHTML = `<i class="fa-solid fa-paper-plane fa-fade"></i> Delivering your message to Muhammed Shibil's inbox...`;
 
       try {
+        const formData = new FormData(contactForm);
         const response = await fetch("https://formsubmit.co/ajax/c94b95ed06fc600397a20234eb0a992e", {
           method: "POST",
           headers: { 
-            'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          body: JSON.stringify({
-            name: name,
-            email: email,
-            _subject: `[Portfolio Inquiry] ${subject} - from ${name}`,
-            message: message
-          })
+          body: formData
         });
 
         const result = await response.json();

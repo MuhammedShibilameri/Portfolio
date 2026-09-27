@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
@@ -928,7 +928,11 @@
 
         <!-- Contact Form -->
         <div class="contact-form-card">
-          <form id="contact-form">
+          <form id="contact-form" action="https://formsubmit.co/c94b95ed06fc600397a20234eb0a992e" method="POST">
+            <!-- FormSubmit Anti-Spam & Template Settings -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
             <div class="form-group">
               <label for="name" class="form-label">Your Name</label>
               <input type="text" id="name" name="name" class="form-input" placeholder="e.g. John Doe" required>
@@ -941,7 +945,7 @@
 
             <div class="form-group">
               <label for="subject" class="form-label">Subject</label>
-              <input type="text" id="subject" name="subject" class="form-input" placeholder="Mobile App Project / Flutter Inquiry" required>
+              <input type="text" id="subject" name="_subject" class="form-input" placeholder="Mobile App Project / Flutter Inquiry" required>
             </div>
 
             <div class="form-group">
@@ -1038,6 +1042,6 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
